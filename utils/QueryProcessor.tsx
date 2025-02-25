@@ -84,5 +84,35 @@ export default function QueryProcessor(query: string): string {
 
     return result.slice(0,-2);
   }
+
+  function isPrime(num: number): boolean {
+    var sqrtnum=Math.floor(Math.sqrt(num));
+      var prime = num != 1;
+      for(var i=2; i<sqrtnum+1; i++) {
+          if(num % i == 0) {
+              prime = false;
+              break;
+          }
+      }
+      return prime;
+  }
+
+  if (query.toLowerCase().includes("which of the following numbers are primes")) {
+    let words = query.split(" ")
+    let list = []
+    let num = 0
+    for (let i = 7; i <= 11; i++){
+        num = parseInt(words[i])
+        if (isPrime(num)) {
+            list.push(num)
+        }
+    }
+    
+    let result = ""
+    list.forEach((number) => result += number + ", ")
+
+    return result.slice(0,-2);
+  }
+
   return("")
 }
