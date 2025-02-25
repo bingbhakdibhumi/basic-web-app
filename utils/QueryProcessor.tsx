@@ -49,5 +49,14 @@ export default function QueryProcessor(query: string): string {
     return (sum.toString())
   }
 
+  if(query.toLowerCase().includes("which of the following numbers is the largest")) {
+    let words = query.split(" ")
+    let first = parseInt(words[8])
+    let second = parseInt(words[9])
+    let third = parseInt(words[10])
+    let biggest = Math.max(first, second, third)
+    return (biggest.toString())
+  }
+
   return "";
 }
