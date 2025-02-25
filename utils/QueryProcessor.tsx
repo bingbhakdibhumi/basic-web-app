@@ -44,18 +44,26 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("what is")) {
     let words = query.split(" ")
     let first = parseInt(words[2])
-    let second = parseInt(words[4])
     let sum = 0
         if (query.toLowerCase().includes("plus")) {
-            sum = first + second
+            sum = first + parseInt(words[4])
         }
         else if (query.toLowerCase().includes("multiplied")) {
-            sum = first * second
+            sum = first * parseInt(words[6])
         }
     return (sum.toString())
   }
 
   if(query.toLowerCase().includes("which of the following numbers is the largest")) {
+    let words = query.split(" ")
+    let first = parseInt(words[8])
+    let second = parseInt(words[9])
+    let third = parseInt(words[10])
+    let biggest = Math.max(first, second, third)
+    return (biggest.toString())
+  }
+
+  if(query.toLowerCase().includes("which of the following numbers is both a square and a cube")) {
     let words = query.split(" ")
     let first = parseInt(words[8])
     let second = parseInt(words[9])
