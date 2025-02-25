@@ -54,7 +54,7 @@ export default function QueryProcessor(query: string): string {
     return (sum.toString())
   }
 
-  if(query.toLowerCase().includes("which of the following numbers is the largest")) {
+  if (query.toLowerCase().includes("which of the following numbers is the largest")) {
     let words = query.split(" ")
     let first = parseInt(words[8])
     let second = parseInt(words[9])
@@ -63,11 +63,11 @@ export default function QueryProcessor(query: string): string {
     return (biggest.toString())
   }
 
-  if(query.toLowerCase().includes("which of the following numbers is both a square and a cube")) {
+  if (query.toLowerCase().includes("which of the following numbers is both a square and a cube")) {
     let words = query.split(" ")
     let list = []
     let num = 0
-    for (let i = 12; i <= 17; i++){
+    for (let i = 12; i <= 18; i++){
         num = parseInt(words[i])
         let c = Math.round(Math.pow(num, 1.0/3.0))
         let s = Math.round(Math.pow(num, 1.0/2.0))
