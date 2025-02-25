@@ -65,12 +65,21 @@ export default function QueryProcessor(query: string): string {
 
   if(query.toLowerCase().includes("which of the following numbers is both a square and a cube")) {
     let words = query.split(" ")
-    let first = parseInt(words[8])
-    let second = parseInt(words[9])
-    let third = parseInt(words[10])
-    let biggest = Math.max(first, second, third)
-    return (biggest.toString())
-  }
+    let list = []
+    let num = 0
+    for (let i = 12; i <= 17; i++){
+        num = parseInt(words[i])
+        let c = Math.round(Math.pow(num, 1.0/3.0))
+        let s = Math.round(Math.pow(num, 1.0/2.0))
+        if (((c * c * c) == num) && ((s * s) == num)) {
+            list.push(num)
+        }
+    }
+    
+    let result = ""
+    list.forEach((number) => result + number)
 
-  return "";
+    return result;
+  }
+  return("")
 }
