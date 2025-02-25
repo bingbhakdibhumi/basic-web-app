@@ -80,9 +80,9 @@ export default function QueryProcessor(query: string): string {
     }
     
     let result = ""
-    list.forEach((number) => result += number + " ")
+    list.forEach((number) => result += number + ", ")
 
-    return result;
+    return result.slice(0,-2);
   }
   return("")
 }
