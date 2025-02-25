@@ -77,7 +77,7 @@ export default function QueryProcessor(query: string): string {
     }
     
     let result = ""
-    list.forEach((number) => result + number)
+    list.forEach((number) => result += number + " ")
 
     return result;
   }
