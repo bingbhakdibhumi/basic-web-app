@@ -51,6 +51,9 @@ export default function QueryProcessor(query: string): string {
         else if (query.toLowerCase().includes("multiplied")) {
             sum = first * parseInt(words[6])
         }
+        else if (query.toLowerCase().includes("minus")) {
+            sum = first - parseInt(words[4])
+        }
     return (sum.toString())
   }
 
