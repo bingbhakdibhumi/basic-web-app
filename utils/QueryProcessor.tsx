@@ -41,5 +41,13 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("what is")) {
+    let words = query.split(" ")
+    let first = parseInt(words[2])
+    let second = parseInt(words[4])
+    let sum = first + second
+    return (sum.toString())
+  }
+
   return "";
 }
