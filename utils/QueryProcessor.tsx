@@ -45,7 +45,13 @@ export default function QueryProcessor(query: string): string {
     let words = query.split(" ")
     let first = parseInt(words[2])
     let second = parseInt(words[4])
-    let sum = first + second
+    let sum = 0
+        if (query.toLowerCase().includes("plus")) {
+            sum = first + second
+        }
+        else if (query.toLowerCase().includes("multiplied")) {
+            sum = first * second
+        }
     return (sum.toString())
   }
 
